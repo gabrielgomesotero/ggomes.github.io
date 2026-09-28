@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Web personal de Gabriel, estudiante de 2º ASIR del IES Francisco de Quevedo.">
+	<title>Gabriel | Administracion de sistemas</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<canvas class="particle-canvas" id="particle-canvas" aria-hidden="true"></canvas>
+	<!-- Cabecera principal con identidad y navegacion -->
+	<header class="site-header" id="inicio">
+		<nav class="navbar" aria-label="Navegacion principal">
+			<a class="brand" href="#inicio">G<span>.</span></a>
+			<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+				<span></span><span></span><span></span>
+			</button>
+			<div class="nav-links" id="nav-links">
+				<a href="#sobre-mi">Sobre mi</a>
+				<a href="#experiencia">Experiencia</a>
+				<a href="#intereses">Intereses</a>
+			</div>
+			<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Activar modo oscuro" title="Cambiar tema">
+				<span class="theme-icon" aria-hidden="true">☾</span>
+			</button>
+		</nav>
+
+		<!-- Presentacion de Gabriel -->
+		<div class="hero wrapper">
+			<p class="eyebrow">2º ASIR · IES Francisco de Quevedo</p>
+			<h1>Hola, soy <span>Gabriel</span>.</h1>
+			<p class="hero-text" id="typewriter" aria-label="Construyo mi camino entre servidores, bases de datos y la tecnologia que hace que todo funcione."><span id="typed-text" aria-hidden="true">Construyo mi camino entre servidores, bases de datos y la tecnologia que hace que todo funcione.</span><span class="typing-caret" aria-hidden="true"></span></p>
+			<a class="button" href="#sobre-mi">Conoceme <span aria-hidden="true">↓</span></a>
+			<div class="hero-mark" aria-hidden="true">ASIR</div>
+		</div>
+	</header>
+
+	<main>
+		<!-- Seccion de presentacion personal -->
+		<section class="section wrapper about" id="sobre-mi">
+			<div class="section-heading">
+				<p class="section-number">01</p>
+				<h2>Sobre mi</h2>
+			</div>
+			<div class="about-content">
+				<p class="lead">Soy Gabriel, estudiante de 2º de Administracion de Sistemas Informaticos en Red en el IES Francisco de Quevedo.</p>
+				<p>Me interesa entender lo que ocurre detras de cada aplicacion: los servidores que la mantienen disponible, las redes que la conectan y las bases de datos que guardan su informacion.</p>
+			</div>
+		</section>
+
+		<!-- Trayectoria y formacion -->
+		<section class="section section-tinted" id="experiencia">
+			<div class="wrapper">
+				<div class="section-heading">
+					<p class="section-number">02</p>
+					<h2>Lo que he hecho</h2>
+				</div>
+				<button class="counter-toggle" id="counter-toggle" type="button" aria-expanded="false" aria-controls="experience-counter">
+					<span class="counter-toggle-icon" aria-hidden="true">+</span> Ver contador
+				</button>
+				<div class="experience-counter" id="experience-counter" hidden>
+					<strong id="experience-count">0</strong>
+					<span>experiencias y etapas de formacion hasta ahora</span>
+				</div>
+				<div class="experience-grid">
+					<article class="experience-card">
+						<span class="card-icon" aria-hidden="true">01</span>
+						<h3>Experiencia informatica</h3>
+						<p>He trabajado de informatico, desarrollando experiencia practica y aprendiendo a resolver problemas tecnologicos del dia a dia.</p>
+					</article>
+					<article class="experience-card featured-card">
+						<span class="card-icon" aria-hidden="true">02</span>
+						<h3>Grado medio de SMR</h3>
+						<p>Tambien curse el grado medio de Sistemas Microinformaticos y Redes, una base que me acerco al mundo de los sistemas.</p>
+					</article>
+					<article class="experience-card">
+						<span class="card-icon" aria-hidden="true">03</span>
+						<h3>2º ASIR</h3>
+						<p>Actualmente sigo creciendo en administracion de sistemas, virtualizacion, redes y servicios informaticos.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<!-- Aficiones y objetivos profesionales -->
+		<section class="section wrapper interests" id="intereses">
+			<div class="section-heading">
+				<p class="section-number">03</p>
+				<h2>Me gusta</h2>
+			</div>
+			<div class="interests-layout">
+				<div class="football-box">
+					<span class="football-ball" aria-hidden="true">⚽</span>
+					<h3>El futbol</h3>
+					<p>Fuera de las pantallas, el futbol es una de mis grandes pasiones.</p>
+				</div>
+				<div class="goal-box">
+					<p class="mini-label">Hacia donde voy</p>
+					<h3>Administrador de bases de datos o servidores<span>.</span></h3>
+					<p>Quiero seguir aprendiendo para especializarme en mantener sistemas estables, seguros y disponibles.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Pie de pagina con contacto -->
+	<footer class="site-footer">
+		<div class="wrapper footer-content">
+			<div>
+				<p class="footer-kicker">Hablemos</p>
+				<h2>¿Tienes un proyecto?</h2>
+			</div>
+			<a class="contact-link" href="mailto:gabriel@example.com">gabriel@example.com <span aria-hidden="true">↗</span></a>
+			<p class="copyright">© <span id="current-year"></span> Gabriel · 2º ASIR</p>
+		</div>
+	</footer>
+
+</body>
+</html>

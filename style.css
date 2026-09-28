@@ -1,0 +1,166 @@
+:root {
+	--ink: #20201e;
+	--muted: #6f6b64;
+	--paper: #fffdf9;
+	--cream: #f7f0e6;
+	--orange: #e95d24;
+	--gold: #dcae38;
+	--line: #e5ddd2;
+	--serif: Georgia, "Times New Roman", serif;
+	--sans: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+	--ink: #f4eee5;
+	--muted: #c0b7aa;
+	--paper: #1d1d1b;
+	--cream: #292722;
+	--line: #48433a;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+	margin: 0;
+	color: var(--ink);
+	background: var(--paper);
+	font-family: var(--sans);
+	line-height: 1.6;
+}
+
+.particle-canvas { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; }
+.site-header, main, .site-footer { position: relative; z-index: 1; }
+
+a { color: inherit; text-decoration: none; }
+
+.wrapper { width: min(1100px, calc(100% - 48px)); margin: 0 auto; }
+
+.site-header {
+	min-height: 680px;
+	overflow: hidden;
+	position: relative;
+	background: var(--cream);
+	border-bottom: 1px solid var(--line);
+}
+
+.site-header::after {
+	content: "";
+	position: absolute;
+	width: 420px;
+	height: 420px;
+	right: -130px;
+	bottom: -190px;
+	border: 1px solid var(--gold);
+	border-radius: 50%;
+	box-shadow: 0 0 0 34px rgba(220, 174, 56, .1), 0 0 0 70px rgba(220, 174, 56, .06);
+}
+
+.navbar {
+	width: min(1100px, calc(100% - 48px));
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 28px 0;
+	border-bottom: 1px solid rgba(32, 32, 30, .14);
+}
+
+.menu-toggle, .theme-toggle { display: grid; place-items: center; border: 1px solid var(--line); color: var(--ink); background: var(--paper); cursor: pointer; }
+.menu-toggle { display: none; width: 42px; height: 42px; gap: 5px; padding: 10px; }
+.menu-toggle span { width: 18px; height: 2px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+.menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+.theme-toggle { width: 42px; height: 42px; margin-left: 28px; font-size: 1.2rem; }
+.theme-toggle:hover, .menu-toggle:hover { border-color: var(--orange); color: var(--orange); }
+.navbar { position: relative; }
+.nav-links { margin-left: auto; }
+
+.brand { font: bold 2rem var(--serif); letter-spacing: 0; }
+.brand span, .goal-box h3 span { color: var(--orange); }
+.nav-links { display: flex; gap: 32px; font-size: .8rem; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; }
+.nav-links a { transition: color .2s ease; }
+.nav-links a:hover { color: var(--orange); }
+
+.hero { position: relative; padding: 145px 0 110px; }
+.eyebrow, .mini-label, .footer-kicker { color: var(--orange); font-size: .76rem; font-weight: bold; letter-spacing: .14em; text-transform: uppercase; }
+.hero h1 { max-width: 700px; margin: 18px 0 20px; font: normal clamp(4rem, 10vw, 8.4rem)/.88 var(--serif); letter-spacing: -.06em; }
+.hero h1 span { color: var(--orange); }
+.hero-text { max-width: 480px; color: var(--muted); font-size: 1.08rem; }
+.typing-caret { display: inline-block; width: 2px; height: 1em; margin-left: 3px; vertical-align: -2px; background: var(--orange); animation: caret-blink .75s steps(2, start) infinite; }
+@keyframes caret-blink { to { visibility: hidden; } }
+.button { display: inline-flex; gap: 18px; align-items: center; margin-top: 24px; padding: 13px 20px; color: white; background: var(--ink); font-size: .8rem; font-weight: bold; text-transform: uppercase; letter-spacing: .08em; transition: background .2s ease, transform .2s ease; }
+.button:hover { background: var(--orange); transform: translateY(-3px); }
+.hero-mark { position: absolute; right: 4%; bottom: 42px; color: var(--gold); font: bold 8rem/.8 var(--sans); opacity: .2; transform: rotate(-90deg); }
+
+.section { padding: 120px 0; }
+.section-tinted { background: var(--cream); }
+.section-heading { display: flex; align-items: baseline; gap: 25px; margin-bottom: 56px; }
+.section-number { margin: 0; color: var(--orange); font-size: .85rem; font-weight: bold; }
+.counter-toggle { display: inline-flex; align-items: center; gap: 10px; margin: -30px 0 28px 45px; padding: 8px 0; border: 0; border-bottom: 1px solid var(--gold); color: var(--ink); background: transparent; font: bold .82rem var(--sans); cursor: pointer; }
+.counter-toggle-icon { color: var(--orange); font-size: 1.2rem; transition: transform .2s ease; }
+.counter-toggle[aria-expanded="true"] .counter-toggle-icon { transform: rotate(45deg); }
+.experience-counter { display: flex; align-items: center; gap: 18px; width: fit-content; margin: 0 0 34px 45px; padding: 14px 20px; border-left: 3px solid var(--gold); background: var(--paper); color: var(--muted); font-size: .9rem; animation: counter-in .3s ease both; }
+.experience-counter[hidden] { display: none; }
+.experience-counter strong { color: var(--orange); font: normal 2.5rem/1 var(--serif); }
+@keyframes counter-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+h2 { margin: 0; font: normal clamp(2.5rem, 5vw, 4.7rem)/1 var(--serif); letter-spacing: -.04em; }
+.about-content { display: grid; grid-template-columns: 1.1fr .9fr; gap: 12%; margin-left: 12%; }
+.about-content p { max-width: 480px; color: var(--muted); }
+.about-content .lead { margin: 0; color: var(--ink); font: normal 1.45rem/1.35 var(--serif); }
+
+.experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.experience-card { min-height: 285px; padding: 30px; border: 1px solid var(--line); background: var(--paper); }
+.featured-card { border-top: 4px solid var(--orange); transform: translateY(-18px); }
+.card-icon { color: var(--gold); font-size: .8rem; font-weight: bold; }
+.experience-card h3 { margin: 54px 0 12px; font: normal 1.55rem/1.1 var(--serif); }
+.experience-card p, .football-box p, .goal-box p { margin-bottom: 0; color: var(--muted); font-size: .95rem; }
+
+.interests-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 18px; }
+.football-box, .goal-box { padding: 40px; }
+.football-box { background: var(--orange); color: white; }
+.football-box p { color: rgba(255, 255, 255, .83); }
+.football-ball { display: block; margin-bottom: 48px; font-size: 3rem; }
+.football-box h3 { margin: 0; font: normal 2.2rem var(--serif); }
+.goal-box { background: var(--gold); }
+.goal-box .mini-label { color: var(--ink); }
+.goal-box h3 { max-width: 600px; margin: 25px 0 18px; font: normal clamp(2rem, 4vw, 3.8rem)/1.03 var(--serif); }
+.goal-box p { color: var(--ink); opacity: .75; }
+
+.site-footer { padding: 80px 0 26px; color: white; background: var(--ink); }
+.footer-content { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: end; }
+.footer-kicker { margin: 0 0 14px; color: var(--gold); }
+.site-footer h2 { color: white; }
+.contact-link { justify-self: end; padding-bottom: 7px; border-bottom: 1px solid var(--gold); color: var(--gold); font-size: 1.05rem; }
+.copyright { grid-column: 1 / -1; margin: 75px 0 0; color: #99958e; font-size: .78rem; }
+
+@media (max-width: 700px) {
+	.wrapper, .navbar { width: min(100% - 32px, 1100px); }
+	.site-header { min-height: 610px; }
+	.navbar { align-items: center; flex-wrap: wrap; }
+	.menu-toggle { display: grid; order: 2; margin-left: auto; }
+	.theme-toggle { order: 3; margin: 0 0 0 10px; }
+	.nav-links { display: none; order: 4; width: 100%; gap: 0; flex-direction: column; align-items: stretch; margin: 16px 0 0; padding-top: 8px; border-top: 1px solid var(--line); font-size: .78rem; }
+	.nav-links.is-open { display: flex; }
+	.nav-links a { padding: 10px 0; }
+	.hero { padding: 110px 0 90px; }
+	.hero h1 { font-size: 4.4rem; }
+	.hero-mark { right: -38px; font-size: 5rem; }
+	.section { padding: 80px 0; }
+	.section-heading { gap: 14px; margin-bottom: 35px; }
+	.counter-toggle, .experience-counter { margin-left: 0; }
+	.about-content, .experience-grid, .interests-layout, .footer-content { grid-template-columns: 1fr; margin-left: 0; }
+	.about-content { gap: 22px; }
+	.featured-card { transform: none; }
+	.football-box, .goal-box { padding: 30px; }
+	.contact-link { justify-self: start; }
+	.copyright { grid-column: auto; margin-top: 35px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	*, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
